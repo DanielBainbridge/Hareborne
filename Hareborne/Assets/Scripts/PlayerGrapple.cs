@@ -13,6 +13,7 @@ public class PlayerGrapple : MonoBehaviour
 
     private void Awake()
     {
+        // Defines Line Renderer
         m_lineRenderer = GetComponent<LineRenderer>();
     }
     public void StartGrapple()
@@ -25,7 +26,7 @@ public class PlayerGrapple : MonoBehaviour
             m_springJoint.autoConfigureConnectedAnchor = false;
             m_springJoint.connectedAnchor = m_grapplePoint;
 
-            //Spring creation
+            // Spring creation
             float distanceFromPoint = Vector3.Distance(m_player.position, m_grapplePoint);
             m_springJoint.maxDistance = distanceFromPoint;
             m_springJoint.minDistance = m_minRopeDistance;
