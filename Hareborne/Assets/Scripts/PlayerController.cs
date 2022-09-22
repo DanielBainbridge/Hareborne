@@ -5,17 +5,21 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public PlayerGrapple m_leftGrapple, m_rightGrapple;
-    public float m_rotationSpeed;
+    private float m_rotationSmooth = 0.1f, m_turnSmoothVelocity;
+    public Transform m_camera;
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start()    {
         
     }
 
     // Update is called once per frame
     void Update()
     {
+        //lock cursor to the center of the screen
+        Cursor.lockState = CursorLockMode.Locked;
+
+        // Left grapple input controls
         if (Input.GetMouseButtonDown(0))
         {
             m_leftGrapple.StartGrapple();
@@ -24,6 +28,8 @@ public class PlayerController : MonoBehaviour
         {
             m_leftGrapple.StopGrapple();
         }
+
+        // Right grapple input controls
         if (Input.GetMouseButtonDown(1))
         {
             m_rightGrapple.StartGrapple();
@@ -33,11 +39,11 @@ public class PlayerController : MonoBehaviour
             m_rightGrapple.StopGrapple();
         }
 
+        //rotation of player
+        float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, m_camera.eulerAngles.y, ref m_turnSmoothVelocity, m_rotationSmooth); 
+        transform.rotation = Quaternion.Euler(0, angle, 0);
+
     }
-    private void LateUpdate()
-    {
-        m_leftGrapple.DrawRope();
-        m_rightGrapple.DrawRope();
-    }
+    
 
 }
