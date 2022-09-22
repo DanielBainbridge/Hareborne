@@ -4,18 +4,16 @@ using UnityEngine;
 
 public class PlayerGrapple : MonoBehaviour
 {
-    private LineRenderer m_lineRenderer;
-    private Vector3 m_grapplePoint, m_currentGrapplePosition;
+    private Vector3 m_grapplePoint;
+    [HideInInspector]
+    public Vector3 m_currentGrapplePosition;
     private SpringJoint m_springJoint;
     public LayerMask m_grappleableObjects;
     public Transform m_hookOrigin, m_camera, m_player;
-    public float m_maxRopeDistance, m_minRopeDistance, m_hookSpeed, m_hookPullStrength, m_hookDamper, m_massScale;
+    public float m_maxRopeDistance, m_minRopeDistance, m_hookSpeed, m_hookRigidness, m_hookPullSlow, m_massScale;
+    [Range(1.0f, 0.0f)][Tooltip("The lower this number the stronger the initial pull")]
+    public float m_initialPull;
 
-    private void Awake()
-    {
-        // Defines Line Renderer
-        m_lineRenderer = GetComponent<LineRenderer>();
-    }
     public void StartGrapple()
     {
         //create RaycastHit
@@ -30,34 +28,25 @@ public class PlayerGrapple : MonoBehaviour
 
             // Spring creation
             float distanceFromPoint = Vector3.Distance(m_player.position, m_grapplePoint);
-            m_springJoint.maxDistance = distanceFromPoint * 0.8f;
-            m_springJoint.minDistance = m_minRopeDistance;
+            m_springJoint.maxDistance = distanceFromPoint * m_initialPull;
+            m_springJoint.minDistance = distanceFromPoint * 0.25f;
 
-            m_springJoint.spring =  m_hookPullStrength;
-            m_springJoint.damper =  m_hookDamper;
+            m_springJoint.spring = m_hookRigidness;
+            m_springJoint.damper = m_hookPullSlow;
             m_springJoint.massScale = m_massScale;
-
-            m_lineRenderer.positionCount = 2;
-            m_currentGrapplePosition = m_hookOrigin.position;
         }
     }    
     public void StopGrapple()
     {
-        m_lineRenderer.positionCount = 0;
         Destroy(m_springJoint);
     }
-    public void DrawRope()
-    {
-        if (!m_springJoint)
-            return;
-
-        m_currentGrapplePosition = Vector3.Lerp(m_currentGrapplePosition, m_grapplePoint, Time.deltaTime * m_hookSpeed);
-        
-        m_lineRenderer.SetPosition(0, m_hookOrigin.position);
-        m_lineRenderer.SetPosition(1, m_currentGrapplePosition);
-    }
+    
     public bool IsGrappling()
     {
         return m_springJoint != null;
+    }
+    public Vector3 GetGrapplePoint()
+    {
+        return m_grapplePoint;
     }
 }
