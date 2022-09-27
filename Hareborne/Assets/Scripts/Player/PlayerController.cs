@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     public PlayerGrapple m_leftGrapple, m_rightGrapple;
     private float m_rotationSmooth = 0.1f, m_turnSmoothVelocity;
     public Transform m_camera;
+    private Vector3 m_respawnLocation;
 
     // Start is called before the first frame update
     void Start()    {
@@ -45,5 +46,14 @@ public class PlayerController : MonoBehaviour
 
     }
     
+    public void SetRespawn(Vector3 location)
+    {
+        m_respawnLocation = location;
+    }
+    public void RespawnCharacter()
+    {
+        transform.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        transform.position = m_respawnLocation;
+    }
 
 }
