@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//a
 public class PlayerGrapple : MonoBehaviour
 {
     private Vector3 m_grapplePoint;
@@ -9,11 +9,18 @@ public class PlayerGrapple : MonoBehaviour
     public Vector3 m_currentGrapplePosition;
     private SpringJoint m_springJoint;
     public LayerMask m_grappleableObjects;
-    public Transform m_hookOrigin, m_camera, m_player;
+    public Transform m_hookOrigin, m_player;
+    [HideInInspector]
+    public Transform m_camera;
     public float m_maxRopeDistance, m_minRopeDistance, m_hookSpeed, m_hookRigidness, m_hookPullSlow, m_massScale;
     [Range(1.0f, 0.0f)][Tooltip("The lower this number the stronger the initial pull")]
     public float m_initialPull;
+//add hang time
 
+    void Start()
+    {
+        m_camera = m_player.GetComponent<PlayerController>().m_camera;
+    }
     public void StartGrapple()
     {
         //create RaycastHit
