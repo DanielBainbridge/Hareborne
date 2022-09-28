@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
-    public Text m_timerText;
+    private Text m_timerText;
     private float m_startTime;
 
     // Start is called before the first frame update
@@ -25,4 +25,5 @@ public class Timer : MonoBehaviour
         m_timerText.text = minutes + " : " + seconds;
 
     }
+    // Add function get current time
 }

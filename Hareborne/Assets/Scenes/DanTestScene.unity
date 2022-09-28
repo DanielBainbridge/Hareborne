@@ -482,8 +482,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f2d8f91da3b1f64faddacf68832d563, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_checkpointPrefab: {fileID: 0}
+  m_checkpointPrefab: {fileID: 638815324}
   m_checkpoints:
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -736,7 +738,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 202d72f88be3a684693245fdfe5b96d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_timerText: {fileID: 0}
 --- !u!1 &1339428986
 GameObject:
   m_ObjectHideFlags: 0
@@ -1594,23 +1595,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5601702828104816560, guid: db62ef0c7126e9c40b57c1707f20c1a1, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.00021159636
+      value: -0.00021159634
       objectReference: {fileID: 0}
     - target: {fileID: 5601702828104816560, guid: db62ef0c7126e9c40b57c1707f20c1a1, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.0010592244
+      value: -0.0010576573
       objectReference: {fileID: 0}
     - target: {fileID: 5601702828104816560, guid: db62ef0c7126e9c40b57c1707f20c1a1, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.00000022412814
+      value: -0.00000022379653
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601702828252916687, guid: db62ef0c7126e9c40b57c1707f20c1a1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.00021159633
       objectReference: {fileID: 0}
     - target: {fileID: 5601702828252916687, guid: db62ef0c7126e9c40b57c1707f20c1a1, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.0010592242
+      value: -0.0010576572
       objectReference: {fileID: 0}
     - target: {fileID: 5601702828252916687, guid: db62ef0c7126e9c40b57c1707f20c1a1, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.00000022412812
+      value: -0.00000022379652
       objectReference: {fileID: 0}
     - target: {fileID: 5601702828763257766, guid: db62ef0c7126e9c40b57c1707f20c1a1, type: 3}
       propertyPath: m_LocalRotation.y

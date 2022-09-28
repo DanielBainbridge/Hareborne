@@ -27,10 +27,15 @@ public class Checkpoint : MonoBehaviour
         if (other.gameObject.GetComponent<PlayerController>())
         {
             m_parentSystem.m_player.SetRespawn(transform.position);
+            //change this line
             m_RecordedTime = Time.time;
+
+            //
             int siblingIndex = transform.GetSiblingIndex();
             m_parentSystem.m_checkpoints[siblingIndex + 1].gameObject.SetActive(true);
             gameObject.SetActive(false);
+
+            //check if all checkpoints in parent Checkpoint system are hit
         }
     }
 }

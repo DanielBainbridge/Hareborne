@@ -20,6 +20,7 @@ public class CheckpointSystem : MonoBehaviour
         {
             c.m_triggered = false;
         }
+        //checkpoint game objects set to false except the first one
         transform.GetChild(0).GetComponent<Checkpoint>().m_triggered = true;
         m_player.transform.position = transform.GetChild(0).transform.position;
         m_player.transform.rotation = transform.GetChild(0).transform.rotation;
