@@ -717,7 +717,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: Timer
 --- !u!222 &1310468311
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1514,7 +1514,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1915585356808042961, guid: ee641ebcec1827140b834fc85f0afdd0, type: 3}
       propertyPath: m_Interpolate
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1915585356808042963, guid: ee641ebcec1827140b834fc85f0afdd0, type: 3}
       propertyPath: m_Name
@@ -1528,6 +1528,10 @@ PrefabInstance:
       propertyPath: m_camera
       value: 
       objectReference: {fileID: 1762074343}
+    - target: {fileID: 1915585357335801915, guid: ee641ebcec1827140b834fc85f0afdd0, type: 3}
+      propertyPath: m_initialPull
+      value: 0.26
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee641ebcec1827140b834fc85f0afdd0, type: 3}
 --- !u!1001 &5601702829866223959
@@ -1595,27 +1599,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5601702828104816560, guid: db62ef0c7126e9c40b57c1707f20c1a1, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.00021159634
+      value: -0.00021159636
       objectReference: {fileID: 0}
     - target: {fileID: 5601702828104816560, guid: db62ef0c7126e9c40b57c1707f20c1a1, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.0010576573
+      value: -0.0010591027
       objectReference: {fileID: 0}
     - target: {fileID: 5601702828104816560, guid: db62ef0c7126e9c40b57c1707f20c1a1, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.00000022379653
+      value: -0.0000002241024
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601702828104816575, guid: db62ef0c7126e9c40b57c1707f20c1a1, type: 3}
+      propertyPath: m_UpdateMethod
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601702828104816575, guid: db62ef0c7126e9c40b57c1707f20c1a1, type: 3}
+      propertyPath: m_BlendUpdateMethod
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5601702828252916687, guid: db62ef0c7126e9c40b57c1707f20c1a1, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.00021159633
+      value: -0.00021159634
       objectReference: {fileID: 0}
     - target: {fileID: 5601702828252916687, guid: db62ef0c7126e9c40b57c1707f20c1a1, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.0010576572
+      value: -0.0010591026
       objectReference: {fileID: 0}
     - target: {fileID: 5601702828252916687, guid: db62ef0c7126e9c40b57c1707f20c1a1, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.00000022379652
+      value: -0.00000022410238
       objectReference: {fileID: 0}
     - target: {fileID: 5601702828763257766, guid: db62ef0c7126e9c40b57c1707f20c1a1, type: 3}
       propertyPath: m_LocalRotation.y
@@ -1637,5 +1649,9 @@ PrefabInstance:
       propertyPath: m_LookAt
       value: 
       objectReference: {fileID: 2033447329}
+    - target: {fileID: 5601702829167075902, guid: db62ef0c7126e9c40b57c1707f20c1a1, type: 3}
+      propertyPath: m_YAxis.m_MaxSpeed
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db62ef0c7126e9c40b57c1707f20c1a1, type: 3}

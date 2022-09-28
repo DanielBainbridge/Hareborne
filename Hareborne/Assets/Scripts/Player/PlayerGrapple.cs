@@ -13,7 +13,7 @@ public class PlayerGrapple : MonoBehaviour
     public float m_maxRopeDistance, m_minRopeDistance, m_hookSpeed, m_hookRigidness, m_hookPullSlow, m_massScale;
     [Range(1.0f, 0.0f)][Tooltip("The lower this number the stronger the initial pull")]
     public float m_initialPull;
-
+//add hang time
     public void StartGrapple()
     {
         //create RaycastHit
