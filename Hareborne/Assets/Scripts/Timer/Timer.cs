@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+//author kai
 public class Timer : MonoBehaviour
 {
     private Text m_timerText;
@@ -25,5 +25,11 @@ public class Timer : MonoBehaviour
         m_timerText.text = minutes + " : " + seconds;
 
     }
-    // Add function get current time
+    // get current time
+    public float GetCurrentTime()
+    {
+        return Time.time - m_startTime;
+    }
+        
+
 }
