@@ -1,7 +1,8 @@
+//Authored By Daniel Bainbridge
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//a
+
 public class PlayerGrapple : MonoBehaviour
 {
     private Vector3 m_grapplePoint;

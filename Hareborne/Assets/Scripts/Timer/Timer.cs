@@ -1,8 +1,9 @@
+//Authored By Daniel Bainbridge, Kai Van Der Staay
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-//author kai
+
 public class Timer : MonoBehaviour
 {
     private Text m_timerText;

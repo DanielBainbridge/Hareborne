@@ -1,3 +1,4 @@
+//Authored By Daniel Bainbridge, Kai Van Der Staay
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,7 +6,7 @@ using UnityEngine;
 public class CheckpointSystem : MonoBehaviour
 {
     public GameObject m_checkpointPrefab;
-    [HideInInspector]
+    //[HideInInspector]
     public List<Checkpoint> m_checkpoints;
     [HideInInspector]
     public PlayerController m_player;
@@ -16,14 +17,18 @@ public class CheckpointSystem : MonoBehaviour
     void Start()
     {
         m_player = GetComponentInParent<PlayerController>();
-        foreach(Checkpoint c in m_checkpoints)
+        if(transform.childCount > 0)
         {
-            c.m_triggered = false;
+            foreach(Checkpoint c in m_checkpoints)
+            {
+                c.m_triggered = false;
+            }
+            //checkpoint game objects set to false except the first one
+            if(transform.GetChild(0).GetComponent<Checkpoint>())
+                transform.GetChild(0).GetComponent<Checkpoint>().m_triggered = true;
+            m_player.transform.position = transform.GetChild(0).transform.position;
+            m_player.transform.rotation = transform.GetChild(0).transform.rotation;
         }
-        //checkpoint game objects set to false except the first one
-        transform.GetChild(0).GetComponent<Checkpoint>().m_triggered = true;
-        m_player.transform.position = transform.GetChild(0).transform.position;
-        m_player.transform.rotation = transform.GetChild(0).transform.rotation;
     }
     
     public void CreateStartEnd()
@@ -41,5 +46,6 @@ public class CheckpointSystem : MonoBehaviour
         GameObject nextCheckpoint = Instantiate(m_checkpointPrefab, transform);
         nextCheckpoint.name = "Checkpoint " + (transform.childCount - 2);
         nextCheckpoint.transform.SetSiblingIndex(transform.childCount - 2);
+        //m_checkpoints.Insert(nextCheckpoint, (m_checkpoints.Count - 2));
     }
 }

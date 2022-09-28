@@ -1,13 +1,15 @@
+//Authored By Daniel Bainbridge, Kai Van Der Staay
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//author Kai
+
 public class Checkpoint : MonoBehaviour
 {
     float m_RecordedTime;
     [HideInInspector]
     public bool m_triggered = false;
     private CheckpointSystem m_parentSystem;
+    [HideInInspector]
     public Timer m_timer;
 
     /// <summary>

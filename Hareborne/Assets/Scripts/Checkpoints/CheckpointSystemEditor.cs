@@ -1,8 +1,8 @@
+//Authored By Daniel Bainbridge
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
-
 [CustomEditor(typeof(CheckpointSystem))]
 public class CheckpointSystemEditor : Editor
 {
