@@ -37,6 +37,7 @@ public class Checkpoint : MonoBehaviour
             gameObject.SetActive(false);
 
             //check if all checkpoints in parent Checkpoint system are hit
+            //note for later, change to system not storing bools for each checkpoint, (triggered checkpoint count in checkpoint system, better for memory, faster, also harder to break)
             foreach(Checkpoint c in m_parentSystem.m_checkpoints)
             {
                 if(!c.m_triggered)
@@ -44,6 +45,7 @@ public class Checkpoint : MonoBehaviour
                     break;
                 }
                 //do win stuffs
+                m_timer.StopTimer();
             }
         }
     }

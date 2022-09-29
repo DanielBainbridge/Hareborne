@@ -22,5 +22,16 @@ public class CheckpointSystemEditor : Editor
             else
                 thisObject.CreateNewCheckpoint();
         }
+        
+        if (GUILayout.Button("Remove Checkpoint"))
+        {
+           thisObject.RemoveCheckpoint();
+        }
+        
+        
+        if (GUILayout.Button("Clear Checkpoints"))
+        {
+           thisObject.ClearCheckpoints();
+        }
     }
 }

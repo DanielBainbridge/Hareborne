@@ -10,6 +10,7 @@ public class CheckpointSystem : MonoBehaviour
     public List<Checkpoint> m_checkpoints;
     [HideInInspector]
     public PlayerController m_player;
+    public Timer m_timer;
     
     /// <summary>
     /// Set a reference to the player from within the scene
@@ -46,6 +47,18 @@ public class CheckpointSystem : MonoBehaviour
         GameObject nextCheckpoint = Instantiate(m_checkpointPrefab, transform);
         nextCheckpoint.name = "Checkpoint " + (transform.childCount - 2);
         nextCheckpoint.transform.SetSiblingIndex(transform.childCount - 2);
-        //m_checkpoints.Insert(nextCheckpoint, (m_checkpoints.Count - 2));
+        m_checkpoints.Insert((m_checkpoints.Count - 2), nextCheckpoint.GetComponent<Checkpoint>());
+    }
+    public void RemoveCheckpoint()
+    {
+        
+    }
+    public void ClearCheckpoints()
+    {
+        m_checkpoints.Clear();
+        for(int i = 0; i > transform.childCount; i++)
+        {
+            Destroy(transform.GetChild(0).gameObject);
+        }
     }
 }
