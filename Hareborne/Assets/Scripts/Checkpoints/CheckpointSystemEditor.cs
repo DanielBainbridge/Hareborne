@@ -23,11 +23,15 @@ public class CheckpointSystemEditor : Editor
                 thisObject.CreateNewCheckpoint();
         }
         
-        if (GUILayout.Button("Remove Checkpoint"))
+        if (GUILayout.Button("Remove Checkpoint From Start"))
         {
-           thisObject.RemoveCheckpoint();
+           thisObject.RemoveCheckpointFromStart();
         }
         
+        if (GUILayout.Button("Remove Checkpoint From End"))
+        {
+           thisObject.RemoveCheckpointFromEnd();
+        }        
         
         if (GUILayout.Button("Clear Checkpoints"))
         {
