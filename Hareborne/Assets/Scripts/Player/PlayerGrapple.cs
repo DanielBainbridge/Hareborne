@@ -14,7 +14,7 @@ public class PlayerGrapple : MonoBehaviour
     [HideInInspector]
     public Transform m_camera;
     public float m_maxRopeDistance, m_minRopeDistance, m_hookSpeed, m_hookRigidness, m_hookPullSlow, m_massScale;
-    [Range(1.0f, 0.0f)][Tooltip("The lower this number the stronger the initial pull")]
+    [Range(0.0f, 1.0f)][Tooltip("The Higher this number the stronger the initial pull")]
     public float m_initialPull;
 //add hang time
 
@@ -36,8 +36,12 @@ public class PlayerGrapple : MonoBehaviour
 
             // Spring creation
             float distanceFromPoint = Vector3.Distance(m_player.position, m_grapplePoint);
-            m_springJoint.maxDistance = distanceFromPoint * m_initialPull;
-            m_springJoint.minDistance = distanceFromPoint * 0.25f;
+            
+            m_springJoint.maxDistance = distanceFromPoint * 0.25f;
+            m_springJoint.minDistance = 0f;
+            //m_springJoint.breakTorque = 90;
+            m_player.GetComponent<Rigidbody>().AddForce((m_grapplePoint - m_player.position) * m_initialPull, ForceMode.Impulse);
+
 
             m_springJoint.spring = m_hookRigidness;
             m_springJoint.damper = m_hookPullSlow;
