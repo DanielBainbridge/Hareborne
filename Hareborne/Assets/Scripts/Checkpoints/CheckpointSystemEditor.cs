@@ -1,8 +1,8 @@
+//Authored By Daniel Bainbridge
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
-
 [CustomEditor(typeof(CheckpointSystem))]
 public class CheckpointSystemEditor : Editor
 {
@@ -21,6 +21,21 @@ public class CheckpointSystemEditor : Editor
                 thisObject.CreateStartEnd();
             else
                 thisObject.CreateNewCheckpoint();
+        }
+        
+        if (GUILayout.Button("Remove Checkpoint From Start"))
+        {
+           thisObject.RemoveCheckpointFromStart();
+        }
+        
+        if (GUILayout.Button("Remove Checkpoint From End"))
+        {
+           thisObject.RemoveCheckpointFromEnd();
+        }        
+        
+        if (GUILayout.Button("Clear Checkpoints"))
+        {
+           thisObject.ClearCheckpoints();
         }
     }
 }
