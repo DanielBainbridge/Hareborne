@@ -1,3 +1,4 @@
+//Author Affax(youtube) (naming conventions changed)
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
