@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5601702828080287569
+--- !u!1 &5096262571584922850
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,86 +8,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5601702828080287568}
-  - component: {fileID: 1898796052}
+  - component: {fileID: 511374890679792564}
+  - component: {fileID: 7656621214276906375}
+  - component: {fileID: 179234279990998841}
+  - component: {fileID: 2452506013326315818}
   m_Layer: 0
-  m_Name: Camera
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5601702828080287568
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5601702828080287569}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 5601702828104816560}
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1898796052
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5601702828080287569}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11081082c4cd9cb46836712d2e99298e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_cameraTarget: {fileID: 0}
-  m_horizontalSensitivity: 2
-  m_verticalSensitivity: 2
-  m_cameraPOV: 50
-  m_cameraOffset: {x: 0, y: 0, z: 0}
---- !u!1 &5601702828104816561
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5601702828104816560}
-  - component: {fileID: 5601702828104816573}
-  - component: {fileID: 5601702828104816574}
-  m_Layer: 0
-  m_Name: Main Camera
+  m_Name: CameraDolly
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5601702828104816560
+--- !u!4 &511374890679792564
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5601702828104816561}
-  m_LocalRotation: {x: 0.07061856, y: -0.0013536918, z: 0.000095835116, w: 0.99750245}
-  m_LocalPosition: {x: 1.1800003, y: 1.9300003, z: -17}
+  m_GameObject: {fileID: 5096262571584922850}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 5601702828080287568}
+  m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!20 &5601702828104816573
+--- !u!20 &7656621214276906375
 Camera:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5601702828104816561}
+  m_GameObject: {fileID: 5096262571584922850}
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
@@ -124,11 +76,34 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &5601702828104816574
+--- !u!81 &179234279990998841
 AudioListener:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5601702828104816561}
+  m_GameObject: {fileID: 5096262571584922850}
   m_Enabled: 1
+--- !u!114 &2452506013326315818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5096262571584922850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11081082c4cd9cb46836712d2e99298e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_cameraTarget: {fileID: 0}
+  m_cameraSensitivity: 90
+  m_cameraPOV: 50
+  m_focusRadius: 0
+  m_focusCentering: 0.5
+  m_minVerticalAngle: -75
+  m_maxVerticalAngle: 75
+  m_autoAlign: 0
+  m_autoAlignDelay: 5
+  alignSmoothRange: 45
+  m_cameraDistance: 12
