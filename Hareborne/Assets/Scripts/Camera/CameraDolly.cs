@@ -70,7 +70,6 @@ public class CameraDolly : MonoBehaviour
         Vector3 lookPosition = (m_targetPosition - lookDirection * m_cameraDistance);
         
 
-        transform.SetPositionAndRotation(lookPosition, lookRotation);
 
         //calculations for boxcast to work with focus radius
         Vector3 rectOffset = lookDirection * m_camera.nearClipPlane;
@@ -88,6 +87,7 @@ public class CameraDolly : MonoBehaviour
             rectPosition = castFrom + castDirection * hit.distance;
             lookPosition = rectPosition - rectOffset;
         }
+        transform.SetPositionAndRotation(lookPosition, lookRotation);
     }
 
     private void UpdateCameraTarget()
@@ -156,7 +156,7 @@ public class CameraDolly : MonoBehaviour
         get
         {
             Vector3 halfextents;
-            halfextents.y = m_camera.nearClipPlane * Mathf.Tan(0.5f * Mathf.Rad2Deg * m_camera.fieldOfView);
+            halfextents.y = m_camera.nearClipPlane * Mathf.Tan(0.5f * Mathf.Deg2Rad * m_camera.fieldOfView);
             halfextents.x = halfextents.y * m_camera.aspect;
             halfextents.z = 0f;
             return halfextents;
