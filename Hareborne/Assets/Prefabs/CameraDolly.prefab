@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_cameraTarget: {fileID: 0}
-  m_cameraSensitivity: 180
+  m_cameraSensitivity: 90
   m_cameraPOV: 50
   m_focusRadius: 0
   m_focusCentering: 0.5
